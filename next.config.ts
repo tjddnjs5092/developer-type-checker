@@ -1,6 +1,5 @@
-import type { NextConfig } from 'next'
-
-const nextConfig: NextConfig = {
+/** @type {import('next').NextConfig} */
+const nextConfig = {
   output: 'export',
   basePath: process.env.NODE_ENV === "production" ? "/developer-type-checker" : "",
   images: {
