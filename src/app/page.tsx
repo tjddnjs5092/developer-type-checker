@@ -242,7 +242,7 @@ const Home = () => {
             <button
               key={index}
               onClick={() => handleAnswer(option.type)}
-              className="w-full flex items-center justify-between p-4 rounded-lg border-2 border-gray-200 hover:border-indigo-600 hover:bg-indigo-50 transition-all"
+              className="w-full flex items-center justify-between p-4 rounded-lg border-2 border-gray-200 transition-all"
             >
               <span className="text-gray-700">{option.text}</span>
               <ArrowRight className="w-4 h-4 text-gray-400" />
