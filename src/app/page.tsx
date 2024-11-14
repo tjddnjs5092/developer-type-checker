@@ -25,7 +25,7 @@ interface PersonalityTypes {
   [key: string]: Result;
 }
 
-const questions = [
+const questions: Question[] = [
   {
     id: 1,
     text: "프로젝트를 시작할 때 당신은...",
@@ -108,7 +108,7 @@ const questions = [
   }
 ];
 
-const personalityTypes = {
+const personalityTypes: PersonalityTypes = {
   "Structured-Static": {
     language: "Java/TypeScript",
     description: "당신은 체계적이고 안정적인 개발을 선호하는 개발자입니다. 정적 타입 언어와 탄탄한 아키텍처를 좋아하며, 철저한 계획과 문서화를 중요시합니다.",
