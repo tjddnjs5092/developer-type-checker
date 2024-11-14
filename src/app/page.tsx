@@ -198,10 +198,26 @@ const Home = () => {
 
   const calculateResult = (finalAnswers: Record<number, string>) => {
     const traits = Object.values(finalAnswers);
-    const structuredCount = traits.filter(t => t === "Structured").length;
-    const staticCount = traits.filter(t => t === "Static").length;
 
-    const personalityType = `${structuredCount > traits.length/2 ? "Structured" : "Dynamic"}-${staticCount > traits.length/2 ? "Static" : "Dynamic"}`;
+    // Structured vs Dynamic 계산
+    const structuredQuestions = [0, 3, 4, 6, 8]; // Structured/Dynamic을 판단하는 질문 인덱스
+    const structuredAnswers = structuredQuestions.map(q => traits[q]);
+    const structuredCount = structuredAnswers.filter(t => t === "Structured").length;
+
+    // Static vs Dynamic 계산
+    const staticQuestions = [1, 2, 5, 7, 9]; // Static/Dynamic을 판단하는 질문 인덱스
+    const staticAnswers = staticQuestions.map(q => traits[q]);
+    const staticCount = staticAnswers.filter(t => t === "Static").length;
+
+    const personalityType = `${structuredCount > structuredQuestions.length/2 ? "Structured" : "Dynamic"}-${staticCount > staticQuestions.length/2 ? "Static" : "Dynamic"}`;
+
+    console.log({
+      structuredCount,
+      staticCount,
+      personalityType,
+      result: personalityTypes[personalityType]
+    });
+
     setResult(personalityTypes[personalityType]);
   };
 
